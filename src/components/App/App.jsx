@@ -32,16 +32,15 @@ function App() {
     setContacts(prevState => [...prevState, newContact]);
   };
 
+  const deleteContact = id => {
+    setContacts(prevContacts => prevContacts.filter(contact => contact.id !== id));
+  };
+
   return (
     <div className={css.app}>
       <h1>Phonebook</h1>
       <ContactForm onSubmit={addContact} />
-      <ContactList
-        contacts={contacts}
-        onContactDelete={() => {
-          console.log('test');
-        }}
-      />
+      <ContactList contacts={contacts} onContactDelete={deleteContact} />
     </div>
   );
 }

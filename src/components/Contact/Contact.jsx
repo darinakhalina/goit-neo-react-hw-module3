@@ -15,7 +15,7 @@ function Contact({ contact, onDelete }) {
         </div>
       </div>
       <button
-        onClick={() => onDelete(contact)}
+        onClick={() => onDelete(contact.id)}
         className={classes['contact-card-delete-btn']}
         type="button"
       >
