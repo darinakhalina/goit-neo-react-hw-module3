@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import ContactForm from '../ContactForm/ContactForm';
 import ContactList from '../ContactList/ContactList';
+import SearchBox from '../SearchBox/SearchBox';
 import css from './App.module.css';
 
 const defaultContacts = [
@@ -17,6 +18,7 @@ function App() {
     const localStorageItem = localStorage.getItem(localStorageKey);
     return localStorageItem ? JSON.parse(localStorageItem) : defaultContacts;
   });
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     localStorage.setItem(localStorageKey, JSON.stringify(contacts));
@@ -36,11 +38,16 @@ function App() {
     setContacts(prevContacts => prevContacts.filter(contact => contact.id !== id));
   };
 
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
   return (
     <div className={css.app}>
       <h1>Phonebook</h1>
       <ContactForm onSubmit={addContact} />
-      <ContactList contacts={contacts} onContactDelete={deleteContact} />
+      <SearchBox value={searchValue} onChange={setSearchValue} />
+      <ContactList contacts={filteredContacts} onContactDelete={deleteContact} />
     </div>
   );
 }
