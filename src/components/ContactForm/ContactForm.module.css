@@ -7,6 +7,14 @@
   border-radius: 4px;
 }
 
+.contact-form-label {
+  margin-bottom: 4px;
+}
+
+.contact-form-input {
+  margin-bottom: 4px;
+}
+
 .error-text {
   font-size: 12px;
   color: red;

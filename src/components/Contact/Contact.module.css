@@ -1,0 +1,33 @@
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.contact-card-info {
+  margin-right: 8px;
+}
+
+.contact-card-info-item:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.contact-card-name {
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+.contact-card-number {
+  font-style: 300;
+  margin-left: 2px;
+}
+
+.contact-card-delete-btn {
+  align-self: center;
+  padding: 4px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}

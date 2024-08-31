@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ContactForm from '../ContactForm/ContactForm';
+import ContactList from '../ContactList/ContactList';
 import css from './App.module.css';
 
 const defaultContacts = [
@@ -35,6 +36,12 @@ function App() {
     <div className={css.app}>
       <h1>Phonebook</h1>
       <ContactForm onSubmit={addContact} />
+      <ContactList
+        contacts={contacts}
+        onContactDelete={() => {
+          console.log('test');
+        }}
+      />
     </div>
   );
 }

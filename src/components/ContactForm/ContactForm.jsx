@@ -33,11 +33,15 @@ function ContactForm({ onSubmit }) {
       validationSchema={validationSchema}
     >
       <Form className={css['contact-form']}>
-        <label htmlFor={nameId}>Name</label>
-        <Field type="text" name="name" id={nameId} />
+        <label className={css['contact-form-label']} htmlFor={nameId}>
+          Name
+        </label>
+        <Field className={css['contact-form-input']} type="text" name="name" id={nameId} />
         <ErrorMessage className={css['error-text']} name="name" component="div" />
-        <label htmlFor={numberId}>Number</label>
-        <Field type="tel" name="number" id={numberId} />
+        <label className={css['contact-form-label']} htmlFor={numberId}>
+          Number
+        </label>
+        <Field className={css['contact-form-input']} type="tel" name="number" id={numberId} />
         <ErrorMessage className={css['error-text']} name="number" component="div" />
         <button type="submit">Add contact</button>
       </Form>
