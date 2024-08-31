@@ -5,18 +5,23 @@
 }
 
 .contact-list-item {
-  flex: 1 1 calc(33% - 16px);
-  box-sizing: border-box;
+  flex: 1 1 100%;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 576px) {
   .contact-list-item {
     flex: 1 1 calc(50% - 16px);
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .contact-list-item {
-    flex: 1 1 100%;
+    flex: 1 1 calc(33.33% - 16px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-list-item {
+    flex: 1 1 calc(25% - 16px);
   }
 }
